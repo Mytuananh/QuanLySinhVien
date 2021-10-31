@@ -47,3 +47,14 @@ insert into Subject (SubName, Credit, Status) VALUE ('Ngu Van', 10, true);
 insert into Mark (SubID, StudentID, Mark, ExamTimes) VALUE (1, 1, 8, '01:00');
 insert into Mark (SubID, StudentID, Mark, ExamTimes) VALUE (1, 2, 10, '02:00');
 insert into Mark (SubID, StudentID, Mark, ExamTimes) VALUE (2, 1, 12, '01:00');
+
+use quanlysinhvien;
+select * from Student;
+select * from Student where Status = true;
+select * from Subject where Credit < 10;
+select s.StudentID, s.StudentName, C.ClassName from Student s  join Class C on C.ClassID = s.ClassID;
+select s.StudentID, s.StudentName as TenHocSinh, c.ClassName as TenLop from  Student s join Class C on C.ClassID = s.ClassID where ClassName = 'A1';
+select s.StudentID, s.StudentName, sub.SubName, m.Mark from student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID;
+select s.StudentID, s.StudentName, sub.SubName, m.Mark from student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID where Mark > 8;
+select s.StudentID, s.StudentName, sub.SubName, m.Mark from student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID where SubName = 'Tieng Anh';
+
