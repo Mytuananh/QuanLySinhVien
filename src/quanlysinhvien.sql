@@ -57,4 +57,12 @@ select s.StudentID, s.StudentName as TenHocSinh, c.ClassName as TenLop from  Stu
 select s.StudentID, s.StudentName, sub.SubName, m.Mark from student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID;
 select s.StudentID, s.StudentName, sub.SubName, m.Mark from student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID where Mark > 8;
 select s.StudentID, s.StudentName, sub.SubName, m.Mark from student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID where SubName = 'Tieng Anh';
+select * from Student where StudentName like '%T%';
+select * from Class where StartDate like '%2021%';
+select * from Subject where Credit between 5 and 6;
+update Student s set s.ClassID = 2 where s.StudentName like '%Tuan%';
+update Student s set s.ClassID = 1 where s.StudentID = 2;
+select s.StudentID, s.StudentName, sub.SubName, m.Mark from Student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID;
+select s.StudentID, s.StudentName, sub.SubName, m.Mark from Student s join Mark M on s.StudentID = M.StudentID join Subject sub on sub.SubID = M.SubID order by Mark desc, StudentName;
+
 
